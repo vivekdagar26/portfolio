@@ -11,9 +11,18 @@ function typeWriter() {
 typeWriter();
 
 // Theme Toggle
-document.getElementById("theme-toggle").addEventListener("click", () => {
+const themeToggleBtn = document.getElementById("theme-toggle");
+
+themeToggleBtn.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+
+  if (document.body.classList.contains("dark-mode")) {
+    themeToggleBtn.textContent = "☀️";  // Sun icon for light mode (means toggle to light)
+  } else {
+    themeToggleBtn.textContent = "🌙";  // Moon icon for dark mode
+  }
 });
+
 
 // Surprise Button
 document.getElementById("surprise-btn").addEventListener("click", () => {
