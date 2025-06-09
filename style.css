@@ -207,6 +207,9 @@ body.dark-mode footer {
 .whatsapp-float:hover {
   transform: scale(1.1);
 }
+body.dark-mode .whatsapp-float {
+  background-color: #128c7e;
+}
 
 
 /* Animated stars container */
