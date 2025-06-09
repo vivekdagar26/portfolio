@@ -153,7 +153,7 @@ body.dark-mode footer {
 /* Buttons on top (theme toggle, surprise, heart) */
 #theme-toggle,
 #surprise-btn,
-#heart-toggle {
+#star-toggle {
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -173,13 +173,13 @@ body.dark-mode footer {
   right: 4rem;
 }
 
-#heart-toggle {
+#star-toggle {
   right: 7rem;
 }
 
 #theme-toggle:hover,
 #surprise-btn:hover,
-#heart-toggle:hover {
+#star-toggle:hover {
   background-color: #2563eb;
 }
 
