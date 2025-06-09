@@ -23,32 +23,6 @@ themeToggleBtn.addEventListener("click", () => {
   }
 });
 
-
-// Surprise Button
-document.getElementById("surprise-btn").addEventListener("click", () => {
-  alert("You're awesome! 💫 Keep shining ✨");
-});
-
-// Star Mode
-document.getElementById("heart-toggle").addEventListener("click", () => {
-  starsActive = !starsActive;
-  if (starsActive) startStars();
-});
-
-function startStars() {
-  if (!starsActive) return;
-
-  const star = document.createElement("div");
-  star.classList.add("star");
-  star.textContent = ["⭐️", "🌟", "✨", "💫"][Math.floor(Math.random() * 4)];
-  star.style.left = Math.random() * window.innerWidth + "px";
-  star.style.top = Math.random() * window.innerHeight + "px";
-  star.style.color = ["#FFD700", "#FFFFFF", "#FFA500"][Math.floor(Math.random() * 3)];
-  document.body.appendChild(star);
-  setTimeout(() => star.remove(), 2000);
-  setTimeout(startStars, 200);
-}
-
 // Contact form validation
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   const email = document.querySelector('input[name="email"]').value;
