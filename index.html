@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Vivek Dagar | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button onclick="document.body.classList.toggle('dark-mode')">Light Mode/Dark Mode</button>
+  <button id="theme-toggle" title="Toggle Light/Dark Mode">🌓</button>
+
   <header>
     <h1>Vivek Dagar</h1>
     <nav>
@@ -17,56 +18,50 @@
     </nav>
   </header>
 
-  
-<section id="about">
-  <h2>About Me</h2>
-  <p>Hello! I’m Vivek Dagar, a seasoned Microsoft Dynamics AX/D365 F&O developer with over 6 years of hands-on experience in designing, developing, and deploying enterprise ERP solutions. I’ve successfully delivered multiple implementations across industries like logistics, manufacturing, and healthcare in the US market.</p>
-
-  <p>My core skills include SSRS reporting, customizations using X++, development of forms and data entities, and integrating Dynamics 365 with third-party systems. I’m also proficient in .NET technologies and have experience with C#, ASP.NET, HTML, CSS, SQL Server, and Java.</p>
-
-  <p>Recently, I developed this personal portfolio website to sharpen my front-end development skills and begin my journey into full-stack development. It represents both my curiosity to learn and my drive to expand beyond ERP systems.</p>
-
-  <p>Outside of tech, I enjoy listening to music and exploring new tools that simplify business processes. Feel free to check out my projects or connect with me for collaboration or consultation!</p>
-</section>
-
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I’m Vivek Dagar, a seasoned Microsoft Dynamics AX/D365 F&O developer with over 6 years of hands-on experience...</p>
+    <p>My core skills include SSRS reporting, customizations using X++, development of forms and data entities...</p>
+    <p>Recently, I developed this personal portfolio website to sharpen my front-end development skills...</p>
+    <p>Outside of tech, I enjoy listening to music and exploring new tools...</p>
+  </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-card">
       <h3>Dynamics 365 F&O implementation for logistics company</h3>
-      <p>Project involved data migration from Dynamics AX2009 to Dynamics 365 and re-implementation of customizations.
-	The customizations covered all major modules such as accounts payable, accounts receivable, cash and bank management, and others.
-	It included integrations with a current in-house application.</p>
+      <p>Project involved data migration from Dynamics AX2009 to D365...</p>
       <h3>Dynamics 365 SCM implementation for medicinal herbs company</h3>
-      <p>Project involved implementing purchase and MDM for customers. It also included integrating D365 SC with Sage and Seed to sale systems.</p>
-      <h3>AX 2012 R3 implementation and support– manufacturing organization</h3>
-      <p>Microsoft Dynamics AX implemented for mapping their business scenarios and customizations as per their requirement. General Ledger,
-	Accounts Payable, Accounts Receivables, Production Information Management, Inventory Management, Procurement & Sourcing are the major modules implemented in first phase.</p>
+      <p>Implemented purchase and MDM, integrated with Sage and Seed to Sale...</p>
+      <h3>AX 2012 R3 implementation – manufacturing organization</h3>
+      <p>Implemented GL, AP, AR, PIM, Inventory, Procurement modules...</p>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me/Give Feedback</h2>
+    <h2>Contact Me / Give Feedback</h2>
     <form action="https://formspree.io/f/mrbkpqqv" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="email" placeholder="Your email" required>
+      <input type="text" name="name" placeholder="Your name" required />
+      <input type="email" name="email" placeholder="Your email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
       <button type="submit">Send</button>
     </form>
   </section>
 
-<section id="resume-links">
-  <h2>Resume & Links</h2>
-  <p>
-    <a href="assets/Vivek_Dagar_Resume.pdf" download>📄 Download My Resume</a><br>
-    <a href="https://www.linkedin.com/in/vivek-dagar-48793b16b/" target="_blank">🔗 LinkedIn</a><br>
-    <a href="https://github.com/vivekdagar26" target="_blank">💻 GitHub</a>
-  </p>
-</section>
+  <section id="resume-links">
+    <h2>Resume & Links</h2>
+    <p>
+      <a href="assets/Vivek_Dagar_Resume.pdf" download>📄 Download My Resume</a><br />
+      <a href="https://www.linkedin.com/in/vivek-dagar-48793b16b/" target="_blank">🔗 LinkedIn</a><br />
+      <a href="https://github.com/vivekdagar26" target="_blank">💻 GitHub</a>
+    </p>
+  </section>
 
   <footer>
     <p>© 2025 Vivek Dagar</p>
   </footer>
+
   <script src="script.js"></script>
 </body>
 </html>
+
