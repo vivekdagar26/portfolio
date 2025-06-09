@@ -1,37 +1,40 @@
-/* Base styles */
+/* Global styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
   background: linear-gradient(to right, #f0f4f8, #d9e4f5);
   color: #333;
-  transition: background 0.4s ease, color 0.4s ease;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dark-mode {
-  background: #1a1a2e;
-  color: #e0e0e0;
+/* Dark mode styles */
+body.dark-mode {
+  background: linear-gradient(to right, #121212, #1e1e1e);
+  color: #eee;
 }
 
+/* Header */
 header {
   background: #1f2937;
   color: white;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-nav {
-  margin-top: 0.5rem;
+body.dark-mode header {
+  background: #222;
 }
 
+/* Navigation links */
 nav a {
   color: white;
-  margin: 0 0.5rem;
+  margin: 0 1rem;
   text-decoration: none;
-  font-size: 1rem;
+  transition: color 0.3s;
 }
 
 nav a:hover {
@@ -39,57 +42,30 @@ nav a:hover {
   text-decoration: underline;
 }
 
+/* Section styles */
 section {
-  padding: 1.5rem;
+  padding: 2rem;
   background-color: white;
   border-radius: 10px;
-  margin: 1.5rem auto;
-  max-width: 90%;
+  margin: 2rem auto;
+  max-width: 800px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.dark-mode section {
-  background-color: #2d2d3d;
+body.dark-mode section {
+  background-color: #222;
+  color: #eee;
 }
 
-/* Button styles */
-button {
-  position: fixed;
-  top: 10px;
-  right: 10px;
-  margin-left: 5px;
-  z-index: 999;
-  padding: 0.5rem;
-  border: none;
-  background: #3b82f6;
-  color: white;
-  border-radius: 50%;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
-
-#surprise-btn {
-  right: 60px;
-}
-#star-toggle {
-  right: 110px;
-}
-
-button:hover {
-  background: #2563eb;
-}
-
-/* Project cards */
-.project-card h3 {
-  margin-top: 1rem;
-}
-
-/* Form */
+/* Form styles */
 form {
   display: flex;
   flex-direction: column;
   gap: 0.7rem;
+  align-items: flex-start;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 input, textarea {
@@ -97,6 +73,15 @@ input, textarea {
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 5px rgba(59,130,246,0.5);
+  outline: none;
 }
 
 textarea {
@@ -109,88 +94,50 @@ form button[type="submit"] {
   color: white;
   font-weight: bold;
   cursor: pointer;
+  align-self: flex-start;
+  padding: 0.7rem 1.2rem;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-form button:hover {
+form button[type="submit"]:hover {
   background-color: #2563eb;
+  transform: scale(1.03);
 }
 
-/* Floating star animation */
-@keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(-100px) scale(0.5);
-    opacity: 0;
-  }
+form button[type="submit"]:focus {
+  outline: 2px solid #60a5fa;
+  outline-offset: 2px;
 }
 
-.star {
-  position: fixed;
-  font-size: 2rem;
-  animation: float 2s ease-out forwards;
-  pointer-events: none;
-  z-index: 1000;
-}
-
-/* WhatsApp Button */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #25D366;
-  color: white;
-  font-size: 24px;
-  padding: 0.7rem 1rem;
-  border-radius: 50%;
-  text-align: center;
-  box-shadow: 2px 2px 8px rgba(0,0,0,0.3);
-  z-index: 1000;
-  text-decoration: none;
-  transition: transform 0.3s;
-}
-
-.whatsapp-float:hover {
-  transform: scale(1.1);
-}
-
+/* Footer */
 footer {
   text-align: center;
   padding: 1rem;
+  background: #f0f4f8;
+  color: #555;
+  margin-top: 3rem;
   font-size: 0.9rem;
 }
 
-/* -------------------------
-   ✅ RESPONSIVE STYLES
----------------------------- */
-@media (max-width: 768px) {
-  header {
-    padding: 0.8rem;
-  }
+body.dark-mode footer {
+  background: #222;
+  color: #aaa;
+}
 
-  nav {
-    display: flex;
+/* Responsive styles */
+@media (max-width: 600px) {
+  header {
     flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
 
   nav a {
-    margin: 0.3rem 0;
-    font-size: 1.1rem;
-  }
-
-  button {
-    font-size: 1rem;
-    padding: 0.4rem;
-  }
-
-  #star-toggle {
-    right: 90px;
-  }
-
-  #surprise-btn {
-    right: 45px;
+    display: block;
+    margin: 0.5rem 0;
   }
 
   section {
@@ -198,8 +145,115 @@ footer {
     margin: 1rem;
   }
 
-  .whatsapp-float {
-    font-size: 20px;
-    padding: 0.6rem 0.9rem;
+  form {
+    width: 100%;
+  }
+}
+
+/* Buttons on top (theme toggle, surprise, heart) */
+#theme-toggle,
+#surprise-btn,
+#heart-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  font-size: 1.3rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+  margin-left: 0.5rem;
+}
+
+#surprise-btn {
+  right: 4rem;
+}
+
+#heart-toggle {
+  right: 7rem;
+}
+
+#theme-toggle:hover,
+#surprise-btn:hover,
+#heart-toggle:hover {
+  background-color: #2563eb;
+}
+
+/* Floating WhatsApp */
+#whatsapp-float {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.3s ease;
+}
+
+#whatsapp-float:hover {
+  transform: scale(1.1);
+}
+
+/* Animated stars container */
+.star-container {
+  position: fixed;
+  top: 10%;
+  left: 10%;
+  pointer-events: none;
+  z-index: 900;
+}
+
+.star {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: gold;
+  clip-path: polygon(
+    50% 0%, 61% 35%, 98% 35%, 68% 57%, 
+    79% 91%, 50% 70%, 21% 91%, 32% 57%, 
+    2% 35%, 39% 35%
+  );
+  animation: twinkle 2s infinite ease-in-out;
+  opacity: 0.8;
+}
+
+.star:nth-child(1) {
+  top: 10px;
+  left: 20px;
+  animation-delay: 0s;
+}
+
+.star:nth-child(2) {
+  top: 30px;
+  left: 50px;
+  animation-delay: 0.5s;
+}
+
+.star:nth-child(3) {
+  top: 50px;
+  left: 10px;
+  animation-delay: 1s;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.2);
   }
 }
