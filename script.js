@@ -21,8 +21,7 @@ document.getElementById("surprise-btn").addEventListener("click", () => {
 });
 
 // Star Mode
-let starsActive = false;
-document.getElementById("star-toggle").addEventListener("click", () => {
+document.getElementById("heart-toggle").addEventListener("click", () => {
   starsActive = !starsActive;
   if (starsActive) startStars();
 });
@@ -44,11 +43,13 @@ function startStars() {
 // Contact form validation
 document.getElementById("contact-form").addEventListener("submit", function(e) {
   const email = document.querySelector('input[name="email"]').value;
-  if (!email.includes("@")) {
-    alert("Please enter a valid email!");
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailPattern.test(email)) {
+    alert("Please enter a valid email address.");
     e.preventDefault();
   }
 });
+
 
 
 
