@@ -161,10 +161,9 @@ body.dark-mode footer {
   }
 }
 
-/* Buttons on top (theme toggle, surprise, heart) */
-#theme-toggle,
-#surprise-btn,
-#star-toggle {
+/* Theme toggle button on top. */
+#theme-toggle
+{
   position: fixed;
   top: 1rem;
   right: 1rem;
@@ -180,17 +179,8 @@ body.dark-mode footer {
   margin-left: 0.5rem;
 }
 
-#surprise-btn {
-  right: 4rem;
-}
-
-#star-toggle {
-  right: 7rem;
-}
-
-#theme-toggle:hover,
-#surprise-btn:hover,
-#star-toggle:hover {
+#theme-toggle:hover
+{
   background-color: #2563eb;
 }
 
@@ -220,57 +210,4 @@ body.dark-mode footer {
 }
 body.dark-mode .whatsapp-float {
   background-color: #128c7e;
-}
-
-
-/* Animated stars container */
-.star-container {
-  position: fixed;
-  top: 10%;
-  left: 10%;
-  pointer-events: none;
-  z-index: 900;
-}
-
-.star {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: gold;
-  clip-path: polygon(
-    50% 0%, 61% 35%, 98% 35%, 68% 57%, 
-    79% 91%, 50% 70%, 21% 91%, 32% 57%, 
-    2% 35%, 39% 35%
-  );
-  animation: twinkle 2s infinite ease-in-out;
-  opacity: 0.8;
-}
-
-.star:nth-child(1) {
-  top: 10px;
-  left: 20px;
-  animation-delay: 0s;
-}
-
-.star:nth-child(2) {
-  top: 30px;
-  left: 50px;
-  animation-delay: 0.5s;
-}
-
-.star:nth-child(3) {
-  top: 50px;
-  left: 10px;
-  animation-delay: 1s;
-}
-
-@keyframes twinkle {
-  0%, 100% {
-    opacity: 0.8;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.4;
-    transform: scale(1.2);
-  }
 }
