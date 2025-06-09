@@ -29,10 +29,16 @@ body.dark-mode header {
   background: #222;
 }
 
+/* Navigation links container */
+header nav {
+  display: flex;
+  gap: 1.5rem; /* space between links */
+}
+
 /* Navigation links */
 nav a {
   color: white;
-  margin: 0 1rem;
+  margin: 0; /* removed margin to use gap instead */
   text-decoration: none;
   transition: color 0.3s;
 }
@@ -135,9 +141,14 @@ body.dark-mode footer {
     text-align: center;
   }
 
+  header nav {
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
   nav a {
     display: block;
-    margin: 0.5rem 0;
+    margin: 0; /* remove margin because gap handles spacing */
   }
 
   section {
