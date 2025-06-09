@@ -1,56 +1,54 @@
-// Typing effect
-const msg = "Hi, I'm Vivek – a passionate ERP Developer who believes in code, coffee & connection.";
+// Typing Effect
+const text = "Vivek Dagar | ERP Developer";
 let i = 0;
-function typeEffect() {
-  if (i < msg.length) {
-    document.getElementById("typewriter").textContent += msg.charAt(i);
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("typewriter").textContent += text.charAt(i);
     i++;
-    setTimeout(typeEffect, 50);
+    setTimeout(typeWriter, 100);
   }
 }
-window.onload = typeEffect;
+typeWriter();
 
-// Dark mode toggle
-const themeToggle = document.getElementById("theme-toggle");
-themeToggle.onclick = () => {
+// Theme Toggle
+document.getElementById("theme-toggle").addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  themeToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
-};
+});
 
-// Surprise message
-document.getElementById("surprise-btn").onclick = () => {
-  const quotes = [
-    "You're doing amazing!",
-    "Keep smiling, you're magic ✨"
-  ];
-  alert(quotes[Math.floor(Math.random() * quotes.length)]);
-};
+// Surprise Button
+document.getElementById("surprise-btn").addEventListener("click", () => {
+  alert("You're awesome! 💫 Keep shining ✨");
+});
 
-// Heartfall animation
-let heartInterval;
-document.getElementById("heart-toggle").onclick = () => {
-  if (heartInterval) {
-    clearInterval(heartInterval);
-    heartInterval = null;
-    return;
-  }
-  heartInterval = setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.innerText = "❤️";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 4000);
-  }, 300);
-};
+// Star Mode
+let starsActive = false;
+document.getElementById("star-toggle").addEventListener("click", () => {
+  starsActive = !starsActive;
+  if (starsActive) startStars();
+});
+
+function startStars() {
+  if (!starsActive) return;
+
+  const star = document.createElement("div");
+  star.classList.add("star");
+  star.textContent = ["⭐️", "🌟", "✨", "💫"][Math.floor(Math.random() * 4)];
+  star.style.left = Math.random() * window.innerWidth + "px";
+  star.style.top = Math.random() * window.innerHeight + "px";
+  star.style.color = ["#FFD700", "#FFFFFF", "#FFA500"][Math.floor(Math.random() * 3)];
+  document.body.appendChild(star);
+  setTimeout(() => star.remove(), 2000);
+  setTimeout(startStars, 200);
+}
 
 // Contact form validation
 document.getElementById("contact-form").addEventListener("submit", function(e) {
-  const email = this.email.value;
+  const email = document.querySelector('input[name="email"]').value;
   if (!email.includes("@")) {
-    alert("Please enter a valid email.");
+    alert("Please enter a valid email!");
     e.preventDefault();
   }
 });
+
 
 
