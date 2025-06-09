@@ -2,15 +2,22 @@
 const toggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
+// On load, apply saved theme from localStorage
 if (localStorage.getItem('theme') === 'dark') {
   body.classList.add('dark-mode');
 }
 
+// Toggle theme on button click
 toggleBtn.addEventListener('click', () => {
   body.classList.toggle('dark-mode');
-  localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
-});
 
+  // Save the preference
+  if (body.classList.contains('dark-mode')) {
+    localStorage.setItem('theme', 'dark');
+  } else {
+    localStorage.setItem('theme', 'light');
+  }
+});
 // Email validation
 document.querySelector("form").addEventListener("submit", function(e) {
   const emailInput = document.querySelector('input[name="email"]');
