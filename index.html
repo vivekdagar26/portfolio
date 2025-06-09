@@ -7,10 +7,12 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <button id="theme-toggle" title="Toggle Light/Dark Mode">🌓</button>
+  <button id="theme-toggle" title="Toggle Light/Dark Mode">🌙</button>
+  <button id="surprise-btn" title="Surprise!">🎁</button>
+  <button id="heart-toggle" title="Love Mode">❤️</button>
 
   <header>
-    <h1>Vivek Dagar</h1>
+    <h1 id="typewriter"></h1>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -20,27 +22,24 @@
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Vivek Dagar, a seasoned Microsoft Dynamics AX/D365 F&O developer with over 6 years of hands-on experience...</p>
-    <p>My core skills include SSRS reporting, customizations using X++, development of forms and data entities...</p>
-    <p>Recently, I developed this personal portfolio website to sharpen my front-end development skills...</p>
-    <p>Outside of tech, I enjoy listening to music and exploring new tools...</p>
+    <p>Hello! I’m Vivek Dagar, a passionate ERP Developer with over 6 years of experience...</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <div class="project-card">
-      <h3>Dynamics 365 F&O implementation for logistics company</h3>
-      <p>Project involved data migration from Dynamics AX2009 to D365...</p>
-      <h3>Dynamics 365 SCM implementation for medicinal herbs company</h3>
-      <p>Implemented purchase and MDM, integrated with Sage and Seed to Sale...</p>
-      <h3>AX 2012 R3 implementation – manufacturing organization</h3>
-      <p>Implemented GL, AP, AR, PIM, Inventory, Procurement modules...</p>
+      <h3>Logistics ERP</h3>
+      <p>Dynamics 365 implementation & integration.</p>
+    </div>
+    <div class="project-card">
+      <h3>Medicinal SCM</h3>
+      <p>Custom modules & third-party integration.</p>
     </div>
   </section>
 
   <section id="contact">
-    <h2>Contact Me / Give Feedback</h2>
-    <form action="https://formspree.io/f/mrbkpqqv" method="POST">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
       <input type="text" name="name" placeholder="Your name" required />
       <input type="email" name="email" placeholder="Your email" required />
       <textarea name="message" placeholder="Your message" required></textarea>
@@ -48,20 +47,12 @@
     </form>
   </section>
 
-  <section id="resume-links">
-    <h2>Resume & Links</h2>
-    <p>
-      <a href="assets/Vivek_Dagar_Resume.pdf" download>📄 Download My Resume</a><br />
-      <a href="https://www.linkedin.com/in/vivek-dagar-48793b16b/" target="_blank">🔗 LinkedIn</a><br />
-      <a href="https://github.com/vivekdagar26" target="_blank">💻 GitHub</a>
-    </p>
-  </section>
-
   <footer>
-    <p>© 2025 Vivek Dagar</p>
+    <p>Crafted with clean code & warm intentions. 💻❤️<br>© 2025 Vivek Dagar</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
